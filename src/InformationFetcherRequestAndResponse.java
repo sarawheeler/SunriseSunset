@@ -44,7 +44,12 @@ public class InformationFetcherRequestAndResponse
 
     public String validateDate()
     {
-       //not sure how to validate the date
+        LocalDate myDateObj = LocalDate.now();
+        System.out.println("Before formatting: " + myDateObj);
+        DateTimeFormatter myFormatObj = DateTimeFormatter.ofPattern("MM-dd-yyyy");
+        String formattedDate = myDateObj.format(myFormatObj);
+        System.out.println("After formatting: " + formattedDate);
+        return formattedDate;
     }
 
     public String validateTimeOfDay()
