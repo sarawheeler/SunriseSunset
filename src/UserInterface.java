@@ -30,10 +30,11 @@ public class UserInterface
 
     public LocalDate inputDate()
     {
-        System.out.println("Enter date: ");
+        System.out.println("Enter date in MM-dd-yyyy: ");
+        System.out.println("Example: 04-23-2021");
         System.out.println();
-        //LocalDate date = input.??();
-        //return date;
+        LocalDate date = input.();
+        return date;
     }
 
     public char selectTimeOfDay ()

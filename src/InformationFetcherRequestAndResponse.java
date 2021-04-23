@@ -1,10 +1,13 @@
+import java.text.SimpleDateFormat;
 import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 
 public class InformationFetcherRequestAndResponse
 {
     private String cityState;
     private int clockFormat;
-    private LocalDate date;
+    private SimpleDateFormat date;
     private char timeOfDay;
     private char moonInfo;
     private char celestialEvent;
@@ -44,9 +47,12 @@ public class InformationFetcherRequestAndResponse
 
     public String validateDate()
     {
-        LocalDate myDateObj = LocalDate.now();
+        LocalDate today = LocalDate.now();
+        String time = "7:27:02 AM";
+        String fullDateTime = today.toString() + " " + time;
+        SimpleDateFormat myDateObj = new SimpleDateFormat("MM-dd-yyyy hh:mm:ss a");
         System.out.println("Before formatting: " + myDateObj);
-        DateTimeFormatter myFormatObj = DateTimeFormatter.ofPattern("MM-dd-yyyy");
+        DateTimeFormatter myFormatObj = DateTimeFormatter.ofPattern("MM-dd-yyyy hh:mm:ss a");
         String formattedDate = myDateObj.format(myFormatObj);
         System.out.println("After formatting: " + formattedDate);
         return formattedDate;
