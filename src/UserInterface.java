@@ -33,45 +33,50 @@ public class UserInterface
         System.out.println("Enter date in MM-dd-yyyy: ");
         System.out.println("Example: 04-23-2021");
         System.out.println();
-        LocalDate date = input.();
+        LocalDate date = inputDate();
         return date;
     }
 
-    public char selectTimeOfDay ()
+    public boolean selectTimeOfDay()
     {
         System.out.println("Enter Y to see information for time of day: ");
         System.out.println("Example: dawn–twilight–sunrise, morning, daytime, evening, sunset–twilight–dusk, night.");
         System.out.println();
-        //make entry non case sensitive
-        //set Y = true with boolean
-        //repeat with other info questions
+        String select = input.nextLine();
+        boolean selectTimeOfDay = false;
+        if (select.toLowerCase().equals("y"))
+        {
+            selectTimeOfDay = true;
+        }
+        return selectTimeOfDay;
     }
 
-    public char selectTimeOfDay ()
-    {
-        System.out.println("Enter Y to see information for time of day: ");
-        System.out.println("Example: dawn–twilight–sunrise, morning, daytime, evening, sunset–twilight–dusk, night.");
-        System.out.println();
-        //make entry case insensitive
-        //set Y = true with boolean
-    }
-
-    public char selectMoonInfo ()
+    public boolean selectMoonInfo()
     {
         System.out.println("Enter Y to see information for the moon: ");
         System.out.println("Example: moonrise, moonset,  moon phase.");
         System.out.println();
-        //make entry case insensitive
-        //set Y = true with boolean
+        String select = input.nextLine();
+        boolean selectMoonInfo = false;
+        if (select.toLowerCase().equals("y"))
+        {
+            selectMoonInfo = true;
+        }
+        return selectMoonInfo;
     }
 
-    public char selectCelestialEvent ()
+    public boolean selectCelestialEvent()
     {
         System.out.println("Enter Y to see information for celestial events: ");
         System.out.println("Example: eclipses, planetary events, meteor showers, astronomy events, spacecraft events.");
         System.out.println();
-        //make entry case insensitive
-        //set Y = true with boolean
+        String select = input.nextLine();
+        boolean selectCelestialEvent = false;
+        if (select.toLowerCase().equals("y"))
+        {
+            selectCelestialEvent = true;
+        }
+        return selectCelestialEvent;
     }
 
     public void displayErrorMessage(String msg)
@@ -82,6 +87,6 @@ public class UserInterface
 
     public void displaySelectedInfo()
     {
-
+        
     }
 }
