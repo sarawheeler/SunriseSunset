@@ -7,10 +7,10 @@ public class InformationFetcherRequestAndResponse
 {
     private String cityState;
     private int clockFormat;
-    private SimpleDateFormat date;
-    private char timeOfDay;
-    private char moonInfo;
-    private char celestialEvent;
+    private String date;
+    private String timeOfDay;
+    private String moonInfo;
+    private String celestialEvent;
 
     //API connection constants
     private static final String URL = "https://api.sunrise-sunset.org/json";
@@ -58,15 +58,27 @@ public class InformationFetcherRequestAndResponse
         return formattedDate;
     }
 
+    public String setDate()
+    {
+        String valid = validateDate();
+
+        if(valid == null)
+        {
+            this.date = date;
+        }
+
+        return valid;
+    }
+
     public String validateTimeOfDay()
     {
-        if (timeOfDay == 'Y' || getTimeOfDay == false)
+        if (timeOfDay.equals("y") || timeOfDay.equals(""))
         {
             return null;
         }
         else
         {
-            return "Invalid character input. Input bust be Y.";
+            return "Invalid character input. Input bust be y.";
         }
     }
 
@@ -84,13 +96,13 @@ public class InformationFetcherRequestAndResponse
 
     public String validateMoonInfo()
     {
-        if (moonInfo == 'Y' || getMoonInfo == false)
+        if (moonInfo.equals("y") || moonInfo.equals(""))
         {
             return null;
         }
         else
         {
-            return "Invalid character input. Input bust be Y.";
+            return "Invalid character input. Input bust be y.";
         }
     }
 
@@ -108,17 +120,17 @@ public class InformationFetcherRequestAndResponse
 
     public String validateCelestialEvent()
     {
-        if (timeOfDay == 'Y' || getCelestialEvent == false)
+        if (celestialEvent.equals("y") || celestialEvent.equals(""))
         {
             return null;
         }
         else
         {
-            return "Invalid character input. Input bust be Y.";
+            return "Invalid character input. Input bust be y.";
         }
     }
 
-    public String CelestialEvent()
+    public String setCelestialEvent()
     {
         String valid = validateCelestialEvent();
 
@@ -129,5 +141,4 @@ public class InformationFetcherRequestAndResponse
 
         return valid;
     }
-
 }

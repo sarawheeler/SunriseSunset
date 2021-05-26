@@ -28,12 +28,12 @@ public class UserInterface
         return clockFormat;
     }
 
-    public LocalDate inputDate()
+    public String inputDate()
     {
         System.out.println("Enter date in MM-dd-yyyy: ");
         System.out.println("Example: 04-23-2021");
         System.out.println();
-        LocalDate date = inputDate();
+        String date = input.nextLine();
         return date;
     }
 
@@ -81,12 +81,7 @@ public class UserInterface
 
     public void displayErrorMessage(String msg)
     {
-        System.out.println("An error occurred. Please try again");
+        System.out.println("An error occurred. Please try again.");
         System.out.println(msg);
-    }
-
-    public void displaySelectedInfo()
-    {
-        
     }
 }

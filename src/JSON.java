@@ -24,6 +24,10 @@ public class JSON
     JSONParser parser = new JSONParser();
     {
         JSONParser parser = new JSONParser();
-        JSONObject simpleJSONObject = (JSONObject) parser.parse(data);
+        try {
+            JSONObject simpleJSONObject = (JSONObject) parser.parse(data);
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
     }
 }
